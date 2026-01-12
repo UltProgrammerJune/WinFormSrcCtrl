@@ -12,7 +12,15 @@ namespace WinFormSrcCtrl
 {
     public partial class Form1 : Form
     {
-        private bool isAddOperation = true;
+        private enum Operation
+        {
+            Add,
+            Subtract,
+            Multiply,
+            Divide
+        }
+
+        private Operation currentOperation = Operation.Add;
 
         public Form1()
         {
@@ -28,13 +36,31 @@ namespace WinFormSrcCtrl
                 double result;
 
                 // Perform calculation based on selected operation
-                if (isAddOperation)
+                switch (currentOperation)
                 {
-                    result = input1 + input2;
-                }
-                else
-                {
-                    result = input1 - input2;
+                    case Operation.Add:
+                        result = input1 + input2;
+                        break;
+                    case Operation.Subtract:
+                        result = input1 - input2;
+                        break;
+                    case Operation.Multiply:
+                        result = input1 * input2;
+                        break;
+                    case Operation.Divide:
+                        if (input2 == 0)
+                        {
+                            MessageBox.Show("Cannot divide by zero.", 
+                                           "Invalid Operation", 
+                                           MessageBoxButtons.OK, 
+                                           MessageBoxIcon.Error);
+                            return;
+                        }
+                        result = input1 / input2;
+                        break;
+                    default:
+                        result = 0;
+                        break;
                 }
 
                 // Display result in txtTotal
@@ -53,7 +79,7 @@ namespace WinFormSrcCtrl
         {
             if (radioAdd.Checked)
             {
-                isAddOperation = true;
+                currentOperation = Operation.Add;
             }
         }
 
@@ -61,13 +87,29 @@ namespace WinFormSrcCtrl
         {
             if (radioSub.Checked)
             {
-                isAddOperation = false;
+                currentOperation = Operation.Subtract;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void radioDiv_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radioDiv.Checked)
+            {
+                currentOperation = Operation.Divide;
+            }
+        }
+
+        private void radioMulti_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radioMulti.Checked)
+            {
+                currentOperation = Operation.Multiply;
+            }
         }
     }
 }

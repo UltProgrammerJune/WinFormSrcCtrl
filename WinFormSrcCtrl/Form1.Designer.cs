@@ -38,6 +38,8 @@
             this.radioAdd = new System.Windows.Forms.RadioButton();
             this.radioSub = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.radioDiv = new System.Windows.Forms.RadioButton();
+            this.radioMulti = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -132,11 +134,37 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "=";
             // 
+            // radioDiv
+            // 
+            this.radioDiv.AutoSize = true;
+            this.radioDiv.Location = new System.Drawing.Point(149, 125);
+            this.radioDiv.Name = "radioDiv";
+            this.radioDiv.Size = new System.Drawing.Size(55, 17);
+            this.radioDiv.TabIndex = 13;
+            this.radioDiv.TabStop = true;
+            this.radioDiv.Text = "Divide";
+            this.radioDiv.UseVisualStyleBackColor = true;
+            this.radioDiv.CheckedChanged += new System.EventHandler(this.radioDiv_CheckedChanged_1);
+            // 
+            // radioMulti
+            // 
+            this.radioMulti.AutoSize = true;
+            this.radioMulti.Location = new System.Drawing.Point(66, 125);
+            this.radioMulti.Name = "radioMulti";
+            this.radioMulti.Size = new System.Drawing.Size(60, 17);
+            this.radioMulti.TabIndex = 12;
+            this.radioMulti.TabStop = true;
+            this.radioMulti.Text = "Multiply";
+            this.radioMulti.UseVisualStyleBackColor = true;
+            this.radioMulti.CheckedChanged += new System.EventHandler(this.radioMulti_CheckedChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 361);
+            this.Controls.Add(this.radioDiv);
+            this.Controls.Add(this.radioMulti);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.radioSub);
             this.Controls.Add(this.radioAdd);
@@ -166,6 +194,8 @@
         private System.Windows.Forms.RadioButton radioAdd;
         private System.Windows.Forms.RadioButton radioSub;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radioDiv;
+        private System.Windows.Forms.RadioButton radioMulti;
     }
 }
 
