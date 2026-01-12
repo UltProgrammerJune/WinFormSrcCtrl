@@ -35,6 +35,9 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.radioAdd = new System.Windows.Forms.RadioButton();
+            this.radioSub = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -84,6 +87,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -93,12 +97,49 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // radioAdd
+            // 
+            this.radioAdd.AutoSize = true;
+            this.radioAdd.Location = new System.Drawing.Point(66, 91);
+            this.radioAdd.Name = "radioAdd";
+            this.radioAdd.Size = new System.Drawing.Size(44, 17);
+            this.radioAdd.TabIndex = 7;
+            this.radioAdd.TabStop = true;
+            this.radioAdd.Text = "Add";
+            this.radioAdd.UseVisualStyleBackColor = true;
+            this.radioAdd.CheckedChanged += new System.EventHandler(this.radioAdd_CheckedChanged);
+            // 
+            // radioSub
+            // 
+            this.radioSub.AutoSize = true;
+            this.radioSub.Location = new System.Drawing.Point(149, 91);
+            this.radioSub.Name = "radioSub";
+            this.radioSub.Size = new System.Drawing.Size(65, 17);
+            this.radioSub.TabIndex = 8;
+            this.radioSub.TabStop = true;
+            this.radioSub.Text = "Subtract";
+            this.radioSub.UseVisualStyleBackColor = true;
+            this.radioSub.CheckedChanged += new System.EventHandler(this.radioSub_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(146, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "=";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 361);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.radioSub);
+            this.Controls.Add(this.radioAdd);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTotal);
@@ -122,6 +163,9 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioAdd;
+        private System.Windows.Forms.RadioButton radioSub;
+        private System.Windows.Forms.Label label3;
     }
 }
 
